@@ -13,4 +13,4 @@ The training and testing setup is as follows:
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=78)
 
 ## Dashboard 
-The dashboard to display the data and findings will be based on a flask template, and D3.js will be utilized to produce interative data visualizations.
+The dashboard to display the data and findings will be based on a flask template. An interative map will be created using the Google Maps API, D3.js, and html.
