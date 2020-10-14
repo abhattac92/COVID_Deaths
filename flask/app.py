@@ -28,5 +28,10 @@ def app_k():
     return render_template('app_k.html')
 
 
+@app.route('/map_test')
+def map_test():
+    return render_template('map_test.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
