@@ -23,150 +23,151 @@
       </div>
     </div>
   </nav>
-  <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="center">
+  <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="rounded mx-auto d-block">
   
   <p class="text-center">App page</p>
-  <h3>Income Prediction Form</h3> 
+  <h3>Kickstarter Prediction</h3> 
   
   <div> 
     <form action="/result" method="POST"> 
-      <label for="age">Age</label> 
-      <input type="text" id="age" name="age"> 
+      <label for="age">Goal amount in USD</label> 
+      <input type="text" id="goal" name="goal"> 
       <br> 
-      <label for="w_class">Working Class</label> 
-      <select id="w_class" name="w_class"> 
-        <option value="0">Federal-gov</option> 
-        <option value="1">Local-gov</option> 
-        <option value="2">Never-worked</option> 
-        <option value="3">Private</option> 
-        <option value="4">Self-emp-inc</option> 
-        <option value="5">Self-emp-not-inc</option> 
-        <option value="6">State-gov</option> 
-        <option value="7">Without-pay</option> 
+      <label for="blurb">Blurb word length</label> 
+      <input type="text" id="blurb" name="blurb"> 
+      <br>
+      <label for="launch">Days for launch to deadline</label> 
+      <input type="text" id="launch" name="launch"> 
+      <br>
+      <label for="creation">Days for creation to launch</label> 
+      <input type="text" id="creation" name="creation"> 
+      <br>
+      <label for="category">Category</label> 
+      <select id="category" name="category"> 
+        <option value="0">Art</option> 
+        <option value="1">Comics</option> 
+        <option value="2">Crafts</option> 
+        <option value="3">Dance</option> 
+        <option value="4">Design</option> 
+        <option value="5">Fashion</option> 
+        <option value="6">Film & video</option> 
+        <option value="7">Food</option> 
+        <option value="8">Games</option> 
+        <option value="9">Journalism</option> 
+        <option value="10">Music</option> 
+        <option value="11">Photography</option>
+        <option value="12">Publishing</option>
+        <option value="13">Technology</option>
+        <option value="14">Theater</option>
       </select> 
       <br> 
-      <label for="edu">Education</label> 
-      <select id="edu" name="edu"> 
-        <option value="0">10th</option> 
-        <option value="1">11th</option> 
-        <option value="2">12th</option> 
-        <option value="3">1st-4th</option> 
-        <option value="4">5th-6th</option> 
-        <option value="5">7th-8th</option> 
-        <option value="6">9th</option> 
-        <option value="7">Assoc-acdm</option> 
-        <option value="8">Assoc-voc</option> 
-        <option value="9">Bachelors</option> 
-        <option value="10">Doctorate</option> 
-        <option value="11">HS-grad</option> 
-        <option value="12">Masters</option> 
-        <option value="13">Preschool</option> 
-        <option value="14">Prof-school</option> 
-        <option value="15">16 - Some-college</option> 
+      <label for="Country">Country</label> 
+      <select id="Country" name="Country"> 
+        <option value="0">Australia</option> 
+        <option value="1">Austria</option> 
+        <option value="2">Belgium</option> 
+        <option value="3">Canada</option> 
+        <option value="4">Denmark</option> 
+        <option value="5">France</option> 
+        <option value="6">Germany</option> 
+        <option value="7">Hong Kong</option> 
+        <option value="8">Ireland</option> 
+        <option value="9">Italy</option> 
+        <option value="10">Japan</option> 
+        <option value="11">Luxembourg</option> 
+        <option value="12">Mexico</option> 
+        <option value="13">New Zealand</option> 
+        <option value="14">Norway</option> 
+        <option value="15">Singapore</option> 
+        <option value="16">Spain</option> 
+        <option value="17">Sweden</option> 
+        <option value="18">Switzerland</option>   
+        <option value="19">Netherlands</option> 
+        <option value="20">United Kingdom</option> 
+        <option value="21">United States</option> 
+      </select> 
+      <br>
+      <label for="launchDay">Launch Day</label> 
+      <select id="launchDay" name="launchDay"> 
+        <option value="0">Monday</option> 
+        <option value="1">Tuesday</option> 
+        <option value="2">Wednesday</option> 
+        <option value="3">Thursday</option> 
+        <option value="4">Friday</option> 
+        <option value="5">Saturday</option> 
+        <option value="6">Sunday</option>  
       </select> 
       <br> 
-      <label for="martial_stat">Marital Status</label> 
-      <select id="martial_stat" name="martial_stat"> 
-        <option value="0">divorced</option> 
-        <option value="1">married</option> 
-        <option value="2">not married</option> 
+      <label for="DeadlineDay">Deadline Day</label> 
+      <select id="DeadlineDay" name="DeadlineDay"> 
+        <option value="0">Monday</option> 
+        <option value="1">Tuesday</option> 
+        <option value="2">Wednesday</option> 
+        <option value="3">Thursday</option> 
+        <option value="4">Friday</option> 
+        <option value="5">Saturday</option> 
+        <option value="6">Sunday</option>  
       </select> 
       <br> 
-      <label for="occup">Occupation</label> 
-      <select id="occup" name="occup"> 
-        <option value="0">Adm-clerical</option> 
-        <option value="1">Armed-Forces</option> 
-        <option value="2">Craft-repair</option> 
-        <option value="3">Exec-managerial</option> 
-        <option value="4">Farming-fishing</option> 
-        <option value="5">Handlers-cleaners</option> 
-        <option value="6">Machine-op-inspct</option> 
-        <option value="7">Other-service</option> 
-        <option value="8">Priv-house-serv</option> 
-        <option value="9">Prof-specialty</option> 
-        <option value="10">Protective-serv</option> 
-        <option value="11">Sales</option> 
-        <option value="12">Tech-support</option> 
-        <option value="13">Transport-moving</option> 
+      <label for="LaunchMonth">Launch Month</label> 
+      <select id="LaunchMonth" name="LaunchMonth"> 
+        <option value="0">January</option> 
+        <option value="1">February</option> 
+        <option value="2">March</option> 
+        <option value="3">April</option> 
+        <option value="4">May</option> 
+        <option value="5">June</option> 
+        <option value="6">July</option>  
+        <option value="7">August</option> 
+        <option value="8">September</option> 
+        <option value="9">October</option> 
+        <option value="10">November</option> 
+        <option value="11">December</option>
       </select> 
       <br> 
-      <label for="relation">Relationship</label> 
-      <select id="relation" name="relation"> 
-        <option value="0">Husband</option> 
-        <option value="1">Not-in-family</option> 
-        <option value="2">Other-relative</option> 
-        <option value="3">Own-child</option> 
-        <option value="4">Unmarried</option> 
-        <option value="5">Wife</option> 
+      <label for="deadlineMonth">Deadline Month</label> 
+      <select id="deadlineMonth" name="deadlineMonth"> 
+        <option value="0">January</option> 
+        <option value="1">February</option> 
+        <option value="2">March</option> 
+        <option value="3">April</option> 
+        <option value="4">May</option> 
+        <option value="5">June</option> 
+        <option value="6">July</option>  
+        <option value="7">August</option> 
+        <option value="8">September</option> 
+        <option value="9">October</option> 
+        <option value="10">November</option> 
+        <option value="11">December</option>
       </select> 
-      <br> 
-      <label for="race">Race</label> 
-      <select id="race" name="race"> 
-        <option value="0">Amer Indian Eskimo</option> 
-        <option value="1">Asian Pac Islander</option> 
-        <option value="2">Black</option> 
-        <option value="3">Other</option> 
-        <option value="4">White</option> 
+      <br>  
+      <label for="launchTime">Launch Time</label> 
+      <select id="launchTime" name="deadlineMonth"> 
+        <option value="0">12am-2am</option> 
+        <option value="1">4am-6am</option> 
+        <option value="2">6am-8am</option> 
+        <option value="3">8am-10am</option> 
+        <option value="4">10am-12pm</option> 
+        <option value="5">12pm-2pm</option> 
+        <option value="6">2pm-4pm</option>  
+        <option value="7">4pm-6pm</option> 
+        <option value="8">6pm-8pm</option> 
+        <option value="9">8pm-10pm</option> 
+        <option value="10">10pm-12am</option> 
       </select> 
-      <br> 
-      <label for="gender">Gender</label> 
-      <select id="gender" name="gender"> 
-        <option value="0">Female</option> 
-        <option value="1">Male</option> 
-      </select> 
-      <br> 
-      <label for="c_gain">Capital Gain </label> 
-      <input type="text" id="c_gain" name="c_gain">btw:[0-99999] 
-      <br> 
-      <label for="c_loss">Capital Loss </label> 
-      <input type="text" id="c_loss" name="c_loss">btw:[0-4356] 
-      <br> 
-      <label for="hours_per_week">Hours per Week </label> 
-      <input type="text" id="hours_per_week" name="hours_per_week">btw:[1-99] 
-      <br> 
-      <label for="native-country">Native Country</label> 
-      <select id="native-country" name="native-country"> 
-        <option value="0">Cambodia</option> 
-        <option value="1">Canada</option> 
-        <option value="2">China</option> 
-        <option value="3">Columbia</option> 
-        <option value="4">Cuba</option> 
-        <option value="5">Dominican Republic</option> 
-        <option value="6">Ecuador</option> 
-        <option value="7">El Salvadorr</option> 
-        <option value="8">England</option> 
-        <option value="9">France</option> 
-        <option value="10">Germany</option> 
-        <option value="11">Greece</option> 
-        <option value="12">Guatemala</option> 
-        <option value="13">Haiti</option> 
-        <option value="14">Netherlands</option> 
-        <option value="15">Honduras</option> 
-        <option value="16">HongKong</option> 
-        <option value="17">Hungary</option> 
-        <option value="18">India</option> 
-        <option value="19">Iran</option> 
-        <option value="20">Ireland</option> 
-        <option value="21">Italy</option> 
-        <option value="22">Jamaica</option> 
-        <option value="23">Japan</option> 
-        <option value="24">Laos</option> 
-        <option value="25">Mexico</option> 
-        <option value="26">Nicaragua</option> 
-        <option value="27">Outlying-US(Guam-USVI-etc)</option> 
-        <option value="28">Peru</option> 
-        <option value="29">Philippines</option> 
-        <option value="30">Poland</option> 
-        <option value="11">Portugal</option> 
-        <option value="32">Puerto-Rico</option> 
-        <option value="33">Scotland</option> 
-        <option value="34">South</option> 
-        <option value="35">Taiwan</option> 
-        <option value="36">Thailand</option> 
-        <option value="37">Trinadad&Tobago</option> 
-        <option value="38">United States</option> 
-        <option value="39">Vietnam</option> 
-        <option value="40">Yugoslavia</option> 
+      <br> <label for="deadline_time">Deadline Time</label> 
+      <select id="deadline_time" name="deadline_time"> 
+        <option value="0">12am-2am</option> 
+        <option value="1">4am-6am</option> 
+        <option value="2">6am-8am</option> 
+        <option value="3">8am-10am</option> 
+        <option value="4">10am-12pm</option> 
+        <option value="5">12pm-2pm</option> 
+        <option value="6">2pm-4pm</option>  
+        <option value="7">4pm-6pm</option> 
+        <option value="8">6pm-8pm</option> 
+        <option value="9">8pm-10pm</option> 
+        <option value="10">10pm-12am</option> 
       </select> 
       <br> 
       <input type="submit" value="Submit"> 
