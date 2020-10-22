@@ -1,6 +1,8 @@
 kickstarter data: https://colab.research.google.com/drive/1OUyPDToPlTRJQKJIKoCgKvqv4ERdRUh-?usp=sharing
 app aws link: http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com
 
+presentation http://kickpresent-env.eba-8atxpj2k.us-east-2.elasticbeanstalk.com
+
 aws large files:
 https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/latest_data.csv
 
