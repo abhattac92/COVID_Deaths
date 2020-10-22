@@ -18,27 +18,16 @@
         <a class="nav-item nav-link active" href="{{ url_for('main') }}">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="{{ url_for('data_pro') }}">Data Processing</a>
         <a class="nav-item nav-link" href="{{ url_for('machine') }}">Machine Learning</a>
-        <a class="nav-item nav-link" href="{{ url_for('app_k') }}">App</a>
+        <a class="nav-item nav-link" href="{{http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com}}">App</a>
       </div>
     </div>
   </nav>
+  <br>
   <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="rounded mx-auto d-block">
   
  <br><br><br><br><br><br><br><br><br>
 
-  <h1 style="text-align:center"h1style>Kickstarter Prediction</h1>
-  <p class="text-center">The Kickstarter Prediction app is hosted online<br>
-  through AWS Elastic Beanstalk at the following link:
-  </p> 
-  <button type="button" class="btn btn-primary btn-lg btn-block" onclick=" relocate_home()">Predictor</button>
- 
-
-  <script>
-  function relocate_home()
-  {
-       location.href = "http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com";
-  } 
-  </script>
+  
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
