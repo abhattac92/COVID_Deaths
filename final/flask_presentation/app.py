@@ -18,11 +18,6 @@ def machine():
     return render_template('machine.html')
 
 
-@app.route('/map_k')
-def map_k():
-    return render_template('map_k.html')
-
-
 @app.route('/app_k')
 def app_k():
     return render_template('app_k.html')
