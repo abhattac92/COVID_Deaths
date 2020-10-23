@@ -9,6 +9,8 @@ https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/latest_data.csv
 
 https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/clean_data.csv
 
+google drive of kickstarter: https://drive.google.com/drive/folders/1MX-ft83RqXCny8nJDQnIZTq7BOs-O_FT?usp=sharing
+
 # Kickstarter Campaigns
 
 Creating a Machine Learning model to predict kickstarter campaign success and display data on an interactive dashboard
