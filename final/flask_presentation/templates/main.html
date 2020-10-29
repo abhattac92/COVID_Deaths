@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
   <!--nav bar-->
@@ -18,20 +19,45 @@
         <a class="nav-item nav-link" href="{{ url_for('main') }}">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="{{ url_for('data_pro') }}">Data Processing</a>
         <a class="nav-item nav-link" href="{{ url_for('machine') }}">Machine Learning</a>
+        <a class="nav-item nav-link" href="{{ url_for('app_const') }}">App Construction</a>
         <a class="nav-item nav-link" href="http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com">App</a>
       </div>
     </div>
   </nav>
     <br>
       <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="rounded mx-auto d-block">
-  
-  <p class="text-center">In this section we will write an overview of the kickstarter data</p>
-  <h1 style="text-align:center"h1style>Project Categories</h1>
-      <img src = "../static/category.png" alt = "Test Image" class="rounded mx-auto d-block">
-      <img src="../static/country.png" class="rounded mx-auto d-block" alt="country image">
-      
-      <img src = "../static/time.png" alt = "time Image" class="rounded mx-auto d-block">
-      
+  <br>
+
+  <h1 style="text-align:center"h1style>Results</h1>
+
+  <p class="text-center">We looked at and analyzed a large amount of Kickstarter data. We then used this 
+    data to try and predict the status outcome of future projects using machine learning. Here is what we found:
+ <br>
+    <br>For our dataset we had more successful campaigns than we had thought. The median and average goals for failed projects were substantially higher.  
+successful projects had much higher amounts pledged and more backers.  
+  </p>
+<br>
+  <img src="../static/fail_success.png" class="rounded mx-auto d-block" alt="fail_success">
+  <br>
+  <p class="text-center">The average campaigns for failed projects were slightly longer, and their blurbs were as well.
+    One difference is that the successful ones had longer lengths of creation to launch days.
+  </p>
+<br>
+  <img src="../static/fail_success2.png" class="rounded mx-auto d-block" alt="fail_success2">
+  <br>
+  <p class="text-center">Below you can see the pledged amount by category & country
+  </p>
+<br>
+  <img src="../static/pledged.png" class="rounded mx-auto d-block" alt="fail_success2">
+
+
+
+
+
+
+
+
+
   
 
 

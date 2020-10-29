@@ -18,70 +18,76 @@
         <a class="nav-item nav-link active" href="{{ url_for('main') }}">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="{{ url_for('data_pro') }}">Data Processing</a>
         <a class="nav-item nav-link" href="{{ url_for('machine') }}">Machine Learning</a>
+        <a class="nav-item nav-link" href="{{ url_for('app_const') }}">App Construction</a>
         <a class="nav-item nav-link" href="http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com">App</a>
       </div>
     </div>
   </nav>
   <br>
   <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="rounded mx-auto d-block">
-  
-  <p class="text-center">data page</p>
-
-  <p class="text-center">We started with 700 different csv files of webscraped data from the kickstarter
-    webpage. These files were combined to create one large csv. This file was stored in AWS and linked
-    to a postgres server in PGadmin. We are able to access this large file in the cloud saving local
-    data. We initially had 2,359,293 rows and 41 columns. The dataset contains projects added to Kickstarter 
-    between 22 April 2009 and 16 September 2020. We dropped columns with small no-null values and irrelevant columns listed below as well
-    <br>
-    <br>
-    converted_pledged_amount - same as usd_pledged
-<br>
-country - same as country_displayed_name
-<br>
-creator - irrelevant 
-<br>
-currency - irrelvant as converted
-<br>
-currency_symbol - irrelevant
-<br>
-currency_trailing_code - irrelevant
-<br>
-currenct_currency - irrelevant as it has converted
-<br>
-disable_communication - almost all the same
-<br>
-fx_rate - irrelevant. info in USD_pledged
-<br>
-is_starrable - irrelevant
-<br>
-name - irrelevant
-<br>
-photo - irrelevant
-<br>
-profile -irrelevant
-<br>
-slug -same as name. irrelevant 
-<br>
-source_url- irrelevant
-<br>
-spotlight - irrelevant as it is only for projects that succeeded. will skew results
-<br>
-state_changed_at - irrelevant
-<br>
-static_usd_rate -irrelevant
-<br>
-urls - irrelevant
-<br>
-usd_type - irrelevant
-<br>
-<br>
-The next step was to convert the Unix time to standard time. We also converted the blurb into a numerical 
-number to see if it is relevant in predicting. We converted the words to a length number. We also replaced
-all null values with zero and none depending on the column. We then broke down the converted time and created
-columns for the month and dates. We also created two hour time increments for data processing purposes.
-We also took out any data whose state was cancelled, suspended, or still live as this would not give
-us any insights.
+  <br>
+  <p class="text-center">Data Processing</p>
+  <p class="text-center">We found our dataset on a site called WebRobots. This site scrapes the data from kickstarter once a month.
+    Each month contained multiple csv files as the data was so large. 
   </p>
+  <img src="../static/original_csv.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center"> We then combined around 700 csv files into one using the below code. </p>
+  
+        <img src="../static/merging_files.png" class="rounded mx-auto d-block" alt="original">
+  
+        <br>
+        <p class="text-center"> The data initially had 2,359,293 rows and 41 columns. The dataset contains projects added to Kickstarter 
+          between 22 April 2009 and 16 September 2020. We looked all the columns and looked to see what was relevant </p>
+
+        <img src="../static/data_desc.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We looked for duplicates and null values. This brought the amount of rows down significantly to 222,555 making the 
+  data more manageable. We also converted every currency amount to USD </p>
+<img src="../static/data_clean1.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We dropped columns with very small values </p>
+<img src="../static/data_clean2.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We dropped columns that we deemed not relevant to our data </p>
+<img src="../static/dropping_columns.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We had to convert some of the formats in the columns to be useable for us. this included UNIX time and extracting
+  some information from columns. We also converted the blurb into a numeric as we did not do an NLP.
+ </p>
+<img src="../static/blurb_convert.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We looked at NaN values and zeros and had those replaced with more workable data
+ </p>
+<img src="../static/null_values.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We created some extra columns by extracting data from columns
+ </p>
+<img src="../static/create_launch.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We removed some states as they would not have much predicting power
+ </p>
+<img src="../static/dropping_status.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We created an RDS through AWS and PGadmin
+ 
+<img src="../static/RDS.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We did this by using co-lab to look at the data and then we had it write to PgAdmin
+ </p>
+<img src="../static/rds2.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center">  We merged a few of the tables in PgAdmin
+ </p>
+<img src="../static/rds3.png" class="rounded mx-auto d-block" alt="original">
+
+
+<p class="text-center"> </p>
+<p class="text-center"> </p>
+
+
+  
+  
   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
