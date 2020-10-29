@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!--nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('main') }}">Kickstarter Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{ url_for('main') }}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{{ url_for('data_pro') }}">Data Processing</a>
+        <a class="nav-item nav-link" href="{{ url_for('machine') }}">Machine Learning</a>
+        <a class="nav-item nav-link" href="{{ url_for('app_const') }}">App Construction</a>
+        <a class="nav-item nav-link" href="http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com">App</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="rounded mx-auto d-block">
+  <br> 
+  <p class="text-center">Machine Learning Page</p>
+  <br>
+  <p class="text-center">  Data pre-onehot encoding
+   </p>
+  <img src="../static/onehot.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center"> We looked to see what the correlation looked like between all the variables
+   </p>
+  <img src="../static/correlation.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  Below is a matrix that visually shows the correlation
+   </p>
+  <img src="../static/correlation_matrix.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  Data is transformed using one hot encoder
+   </p>
+  <img src="../static/transform_cat_to_num.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  Created a sample to use for testing and then split the data for the models
+   </p>
+  <img src="../static/split_data.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  We scaled the data and used Pickle to save the scaler to use in the app. 
+    We ended up having 65 input variables for the model. 
+   </p>
+  <img src="../static/scaler.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  We then ran the data through a neural network
+   </p>
+  <img src="../static/neural network.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  The model seemed to be overfit for the data. 76% training accuracy vs 70% on the actual.
+   </p>
+  <img src="../static/neural results.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  We also tried logistical regression with even worse results
+   </p>
+  <img src="../static/log_reg.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  Random forest was our best consistent outcome after tweaking
+   </p>
+  <img src="../static/random_forest.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  We looked at the feature importances and used this to remove columns that did not explain much.
+   </p>
+  <img src="../static/feature importance.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center">  
+   </p>
+  <img src="../static/random_forest_accuracy.png" class="rounded mx-auto d-block" alt="original">
+
+  <br>
+  <p class="text-center">  Once the model was trained, we used pickle to preserve it for the model.
+   </p>
+  <img src="../static/pickle.png" class="rounded mx-auto d-block" alt="original">
+
+
+
+
+
+
+  
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!--nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('main') }}">Kickstarter Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{{ url_for('main') }}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="{{ url_for('data_pro') }}">Data Processing</a>
+        <a class="nav-item nav-link" href="{{ url_for('machine') }}">Machine Learning</a>
+        <a class="nav-item nav-link" href="{{ url_for('app_const') }}">App Construction</a>
+        <a class="nav-item nav-link" href="http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com">App</a>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <img src = "../static/tq0sfld-kickstarter-logo-green.png" alt = "kickstarter logo" class="rounded mx-auto d-block">
+  <br>
+  <p class="text-center">Data Processing</p>
+  <p class="text-center">We found our dataset on a site called WebRobots. This site scrapes the data from kickstarter once a month.
+    Each month contained multiple csv files as the data was so large. 
+  </p>
+  <img src="../static/original_csv.png" class="rounded mx-auto d-block" alt="original">
+  <br>
+  <p class="text-center"> We then combined around 700 csv files into one using the below code. </p>
+  
+        <img src="../static/merging_files.png" class="rounded mx-auto d-block" alt="original">
+  
+        <br>
+        <p class="text-center"> The data initially had 2,359,293 rows and 41 columns. The dataset contains projects added to Kickstarter 
+          between 22 April 2009 and 16 September 2020. We looked all the columns and looked to see what was relevant </p>
+
+        <img src="../static/data_desc.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We looked for duplicates and null values. This brought the amount of rows down significantly to 222,555 making the 
+  data more manageable. We also converted every currency amount to USD </p>
+<img src="../static/data_clean1.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We dropped columns with very small values </p>
+<img src="../static/data_clean2.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We dropped columns that we deemed not relevant to our data </p>
+<img src="../static/dropping_columns.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We had to convert some of the formats in the columns to be useable for us. this included UNIX time and extracting
+  some information from columns. We also converted the blurb into a numeric as we did not do an NLP.
+ </p>
+<img src="../static/blurb_convert.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We looked at NaN values and zeros and had those replaced with more workable data
+ </p>
+<img src="../static/null_values.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We created some extra columns by extracting data from columns
+ </p>
+<img src="../static/create_launch.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We removed some states as they would not have much predicting power
+ </p>
+<img src="../static/dropping_status.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We created an RDS through AWS and PGadmin
+ 
+<img src="../static/RDS.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center"> We did this by using co-lab to look at the data and then we had it write to PgAdmin
+ </p>
+<img src="../static/rds2.png" class="rounded mx-auto d-block" alt="original">
+<br>
+<p class="text-center">  We merged a few of the tables in PgAdmin
+ </p>
+<img src="../static/rds3.png" class="rounded mx-auto d-block" alt="original">
+
+
+<p class="text-center"> </p>
+<p class="text-center"> </p>
+
+
+  
+  
+  
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</body>
+</html>
