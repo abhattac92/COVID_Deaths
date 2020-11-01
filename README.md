@@ -1,18 +1,6 @@
-kickstarter data: https://colab.research.google.com/drive/1OUyPDToPlTRJQKJIKoCgKvqv4ERdRUh-?usp=sharing
-
-app aws link: http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com
-
-presentation http://kickpresent-env.eba-8atxpj2k.us-east-2.elasticbeanstalk.com
-
-aws large files:
-https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/latest_data.csv
-
-https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/clean_data.csv
-
-google drive of kickstarter: https://drive.google.com/drive/folders/1MX-ft83RqXCny8nJDQnIZTq7BOs-O_FT?usp=sharing
-
 # Kickstarter Campaigns
-
+-by Aakash Bhattacharya, Dayeon Chrissy Cho, John Will Hanna, Laurent Van Hassel
+![]
 Creating a Machine Learning model to predict kickstarter campaign success and display data on an interactive dashboard
 
 # Technologies Used
@@ -32,8 +20,24 @@ This model will be created with the intention of determining whether or not a Ki
 The training and testing setup is as follows:
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=78)
 
+# Resources
+kickstarter data: https://colab.research.google.com/drive/1OUyPDToPlTRJQKJIKoCgKvqv4ERdRUh-?usp=sharing
+
+app aws link: http://kickstarter-env.eba-kcr5xpvr.us-east-2.elasticbeanstalk.com
+
+presentation http://kickpresent-env.eba-8atxpj2k.us-east-2.elasticbeanstalk.com
+
+aws large files:
+https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/latest_data.csv
+
+https://laurentvh-kickstarter.s3.us-east-2.amazonaws.com/clean_data.csv
+
+google drive of kickstarter: https://drive.google.com/drive/folders/1MX-ft83RqXCny8nJDQnIZTq7BOs-O_FT?usp=sharing
+
+
 ## Dashboard
 
 The dashboard to display the data and findings will be based on a flask template. An interative map will be created using the Google Maps API, D3.js, and html.
 
 ![](RDS.png)
+
